@@ -1,10 +1,7 @@
 const fs = require("fs");
-const axios = require("axios");
 const inquirer = require("inquirer");
 const generate = require("./utils/generateMarkdown");
 const api = require("./utils/api");
-
-// const writeFileAsync = util.promisify(fs.writeFile);
 
 // username
 // project title
@@ -60,14 +57,14 @@ const questions = [
   {type: "input", name: "contribute", message: "What does the user need to know about contributing to the repo?"}
 ];
 
-// async function writeToFile(fileName, data) {
-//   await fs.writeFileAsync(fileName, data, function(err){
-//     if (err) {
-//       return console.log(err);
-//     }
-//     console.log("success!");
-//   })
-// }
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, function(err){
+    if (err) {
+      return console.log(err);
+    }
+    console.log("success!");
+  })
+}
 
 function init() {
   inquirer
@@ -90,9 +87,9 @@ function init() {
         console.log(data);
         //Set the markdown
         const markDown = generate.generateMarkdown(data);
-        return console.log(markDown);
+        console.log(markDown);
         // Write it all to file
-        // writeToFile("README.md", markDown);            
+        writeToFile("README.md", markDown);            
       } catch(err){
         console.log(err);
       }
