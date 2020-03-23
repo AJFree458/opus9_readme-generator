@@ -27,11 +27,10 @@ inquirer
         // Add badges
         // Write to file
 //         fs.writeFile("README.md", function(err) {
-        
+//         })
       })
   })
 // const questions = [
-//   {type: "input", name: "github", message: "What is your GitHub username?"},
 //   {type: "input", name: "title", message: "What is your Project title?"},
 //   {type: "input", name: "description", message: "Please give a short description of the project."},
 //   {type: "list", name: "license", message: "What License would you like to use?", choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]},
