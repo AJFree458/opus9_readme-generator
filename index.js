@@ -70,8 +70,9 @@ const questions = [
 // }
 
 function init() {
-  inquirer.prompt(questions
-    ).then(async (answers) => {
+  inquirer
+  .prompt(questions)
+  .then(async (answers) => {
       try {
         // console.log(answers.github)
         // console.log(answers.title)
@@ -89,7 +90,7 @@ function init() {
         console.log(data);
         //Set the markdown
         const markDown = generate.generateMarkdown(data);
-        console.log(markDown);
+        return console.log(markDown);
         // Write it all to file
         // writeToFile("README.md", markDown);            
       } catch(err){
