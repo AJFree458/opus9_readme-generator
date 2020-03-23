@@ -2,7 +2,7 @@ function generateMarkdown(data) {
   return `
 # ${data.title}
 
-[![GitHub license](https://img.shields.io/static/v1?label=License&message=${data.license}&color=blue)](https://github.com/${data.login}/${data.title})
+[![GitHub license](https://img.shields.io/static/v1?label=License&message=${data.license}&color=blue)](https://github.com/${data.github}/${data.title})
 
 ## Description
 
@@ -36,7 +36,7 @@ ${data.usage}
 
 ## License
 
-This project is licensed under the ${data.license}, license.
+This project is licensed under the ${data.license} license.
 
 ## Contributing
 
@@ -44,21 +44,21 @@ ${data.contribution}
 
 ## Credit
 
-${data.credit},
+${data.credit}
 
 ## Tests
 
 To run tests, run the following command:
 
 \`\`\`
-${data.test},
+${data.test}
 \`\`\`
 
 ## Questions
 
-<img src="${data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
+<img src="${data.data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
 
-If you have any questions about the repo, open an issue or contact [${data.login}](https://api.github.com/users/${data.login}) directly at ${data.email}.
+If you have any questions about the repo, open an issue or contact [${data.github}](https://api.github.com/users/${data.github}) directly at ${data.data.email}.
 `;
 };
 
