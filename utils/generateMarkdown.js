@@ -2,7 +2,7 @@ function generateMarkdown(data) {
   return `
 # ${data.title}
 
-[![GitHub license](https://img.shields.io/static/v1?label=License&message=${data.license}&color=blue)](https://github.com/${data.data.login}/${data.title})
+[![GitHub license](https://img.shields.io/static/v1?label=License&message=${data.license}&color=blue)](https://github.com/${data.login}/${data.title})
 
 ## Description
 
@@ -56,10 +56,10 @@ ${data.test},
 
 ## Questions
 
-<img src="${data.data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
+<img src="${data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
 
-If you have any questions about the repo, open an issue or contact [${data.data.login}](https://api.github.com/users/${data.data.login}) directly at ${data.data.email}.
+If you have any questions about the repo, open an issue or contact [${data.login}](https://api.github.com/users/${data.login}) directly at ${data.email}.
 `;
-}
+};
 
-module.exports = generateMarkdown;
+module.exports = {generateMarkdown};
