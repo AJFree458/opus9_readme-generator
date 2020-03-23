@@ -1,15 +1,64 @@
 function generateMarkdown(data) {
   return `
-# ${data.title},
-## ${data.description},
-## ${data.table},
-## ${data.install},
-## ${data.test},
-## ${data.usage},
-## ${data.contribution},
-## ${data.credit},
-## ${data.license},
-## ${data.questions}
+# ${data.title}
+
+[![GitHub license](https://img.shields.io/static/v1?label=License&message=${data.license}&color=blue)](https://github.com/${data.data.login}/${data.title})
+
+## Description
+
+${data.description}
+
+## Table of Content
+
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [License](#license)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+## Installation
+
+To install necessary dependencies, run the following command:
+
+\`\`\`
+${data.install}
+\`\`\`
+
+## Usage
+
+${data.usage}
+
+## License
+
+This project is licensed under the ${data.license}, license.
+
+## Contributing
+
+${data.contribution}
+
+## Credit
+
+${data.credit},
+
+## Tests
+
+To run tests, run the following command:
+
+\`\`\`
+${data.test},
+\`\`\`
+
+## Questions
+
+<img src="${data.data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
+
+If you have any questions about the repo, open an issue or contact [${data.data.login}](https://api.github.com/users/${data.data.login}) directly at ${data.data.email}.
 `;
 }
 
