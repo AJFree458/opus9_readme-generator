@@ -30,6 +30,10 @@ To install necessary dependencies, run the following command:
 ${data.install}
 \`\`\`
 
+## Deployment
+
+This project's repository is at: [${data.title}](https://github.com/${data.username}/${data.title})
+
 ## Usage
 
 ${data.usage}
