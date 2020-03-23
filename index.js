@@ -1,4 +1,5 @@
 const fs = require("fs");
+const axios = require("axios");
 const inquirer = require("inquirer");
 const generate = require("./utils/generateMarkdown");
 const api = require("./utils/api");
@@ -79,22 +80,25 @@ function init() {
         // console.log(answers.test)
         // console.log(answers.usage)
         // console.log(answers.contribute)
-        // Make a const for the GitHub Username
-        const username = await api.getUser(answers.github);
-        console.log(username);
-        // Assign the answers to a data variable
-        const data = answers;
-        // console.log(data);
-        //Set the markdown
-        const markDown = generate.generateMarkdown(data);
-        // console.log(markDown);
-        // Write it all to file
-        writeToFile("README.md", markDown);
-        return (username, data);         
+        // Make an axios call
+        await axios.get(`https://api.github.com/users/${answers.github}`)
+        .then(response => {
+          // console.log(response);
+          // return (response);
+          // Assign the answers and axios response to a data variable
+          const data = Object.assign({}, answers, response);
+          console.log(data);
+          //Set the markdown
+          const markDown = generate.generateMarkdown(data);
+          // console.log(markDown);
+          // Write it all to file
+          writeToFile("README.md", markDown);
+          return (data);
+        });     
       } catch(err){
         console.log(err);
       }
-      })
+      });
 }
 
 init();
