@@ -2,7 +2,7 @@ function generateMarkdown(data) {
   return `
 # ${data.title}
 
-[![GitHub license](https://img.shields.io/static/v1?label=License&message=${data.license}&color=blue)](https://github.com/${data.github}/${data.title})
+![GitHub All Releases](https://img.shields.io/github/downloads/${data.username}/${data.title}/total)
 
 ## Description
 
@@ -35,6 +35,8 @@ ${data.install}
 ${data.usage}
 
 ## License
+
+[![GitHub license](https://img.shields.io/static/v1?label=License&message=${data.license}&color=blue)](https://github.com/${data.github}/${data.title})
 
 This project is licensed under the ${data.license} license.
 
