@@ -2,6 +2,7 @@ const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
 const generateMarkDown = require("./utils/generateMarkdown");
+const api = require("./utils/api");
 // username
 // project title
 // description of project
@@ -67,7 +68,7 @@ const questions = [
 
 function init() {
   inquirer.prompt(questions
-    ).then((answers) => {
+    ).then(async (answers) => {
       console.log(answers.github)
       console.log(answers.title)
       console.log(answers.description)
@@ -77,8 +78,8 @@ function init() {
       console.log(answers.usage)
       console.log(answers.contribute)
       // Make a const for the GitHub Username
-      const userName = api.getUser(answers.github);
-      console.log(userName);
+      const username = await api.getUser(answers.github);
+      console.log(username);
       // Assign the answers to a data variable
       const data = answers;
       console.log(data);
