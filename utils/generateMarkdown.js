@@ -62,4 +62,4 @@ If you have any questions about the repo, open an issue or contact [${data.login
 `;
 };
 
-module.exports = {generateMarkdown};
+module.exports = generateMarkdown;
