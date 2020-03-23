@@ -1,8 +1,11 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-const generateMarkDown = require("./utils/generateMarkdown");
+const generate = require("./utils/generateMarkdown");
 const api = require("./utils/api");
+
+// const writeFileAsync = util.promisify(fs.writeFile);
+
 // username
 // project title
 // description of project
@@ -57,38 +60,42 @@ const questions = [
   {type: "input", name: "contribute", message: "What does the user need to know about contributing to the repo?"}
 ];
 
-// function writeToFile(fileName, data) {
-//   fs.writeFile("README.md", data, function(err){
+// async function writeToFile(fileName, data) {
+//   await fs.writeFileAsync(fileName, data, function(err){
 //     if (err) {
 //       return console.log(err);
 //     }
-//     console.log("success");
+//     console.log("success!");
 //   })
 // }
 
 function init() {
   inquirer.prompt(questions
     ).then(async (answers) => {
-      console.log(answers.github)
-      console.log(answers.title)
-      console.log(answers.description)
-      console.log(answers.license)
-      console.log(answers.install)
-      console.log(answers.test)
-      console.log(answers.usage)
-      console.log(answers.contribute)
-      // Make a const for the GitHub Username
-      const username = await api.getUser(answers.github);
-      console.log(username);
-      // Assign the answers to a data variable
-      const data = answers;
-      console.log(data);
-      //Set the markdown
-      // const markDown = generateMarkDown.generateMarkdown(data);
-      // Write it all to file
-      // writeToFile("README.md", markDown);
-      
-    })
+      try {
+        // console.log(answers.github)
+        // console.log(answers.title)
+        // console.log(answers.description)
+        // console.log(answers.license)
+        // console.log(answers.install)
+        // console.log(answers.test)
+        // console.log(answers.usage)
+        // console.log(answers.contribute)
+        // Make a const for the GitHub Username
+        const username = await api.getUser(answers.github);
+        console.log(username);
+        // Assign the answers to a data variable
+        const data = answers;
+        console.log(data);
+        //Set the markdown
+        const markDown = generate.generateMarkdown(data);
+        console.log(markDown);
+        // Write it all to file
+        // writeToFile("README.md", markDown);            
+      } catch(err){
+        console.log(err);
+      }
+      })
 }
 
 init();
