@@ -9,6 +9,7 @@ function generateMarkdown(data) {
 ## ${data.contribution},
 ## ${data.credit},
 ## ${data.license},
+## ${data.questions}
 `;
 }
 
