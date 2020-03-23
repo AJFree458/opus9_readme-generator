@@ -44,7 +44,7 @@ function init() {
           // return (response);
           // Assign the answers and axios response to a data variable
           const data = Object.assign({}, answers, response);
-          console.log(data);
+          // console.log(data);
           //Set the markdown
           const markDown = generate.generateMarkdown(data);
           // console.log(markDown);
