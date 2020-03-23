@@ -2,7 +2,7 @@ const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
 const generate = require("./utils/generateMarkdown");
-const api = require("./utils/api");
+// const api = require("./utils/api");
 
 // username
 // project title
