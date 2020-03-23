@@ -81,7 +81,7 @@ function init() {
         // console.log(answers.contribute)
         // Make a const for the GitHub Username
         const username = await api.getUser(answers.github);
-        // console.log(username);
+        console.log(username);
         // Assign the answers to a data variable
         const data = answers;
         // console.log(data);
@@ -89,7 +89,8 @@ function init() {
         const markDown = generate.generateMarkdown(data);
         // console.log(markDown);
         // Write it all to file
-        writeToFile("README.md", markDown);            
+        writeToFile("README.md", markDown);
+        return (username, data);         
       } catch(err){
         console.log(err);
       }
