@@ -12,7 +12,8 @@ const questions = [
   {type: "input", name: "install", message: "What command needs to be run to install dependencies?", default: "npm i"},
   {type: "input", name: "test", message: "What command(s) should be run for tests?", default: "npm test"},
   {type: "input", name: "usage", message: "What instructions does the user need to have to use the repo?"},
-  {type: "input", name: "contribute", message: "What does the user need to know about contributing to the repo?"}
+  {type: "input", name: "contribute", message: "What does the user need to know about contributing to the repo?"},
+  {type: "input", name: "credit", message: "Who has collaborated on this project?"}
 ];
 
 function writeToFile(fileName, data) {
