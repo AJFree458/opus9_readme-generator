@@ -12,6 +12,8 @@ ${data.description}
 
 * [Installation](#installation)
 
+* [Deployment](#deployment)
+
 * [Usage](#usage)
 
 * [License](#license)
