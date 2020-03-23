@@ -86,7 +86,7 @@ function init() {
         const username = await api.getUser(answers.github);
         console.log(username);
         // Assign the answers to a data variable
-        const data = Object.assign({}, answers, username.data.login);
+        const data = answers;
         console.log(data);
         //Set the markdown
         const markDown = generate.generateMarkdown(data);
