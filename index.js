@@ -62,7 +62,7 @@ function writeToFile(fileName, data) {
     if (err) {
       return console.log(err);
     }
-    console.log("success!");
+    console.log("SUCCESS!");
   })
 }
 
@@ -81,13 +81,13 @@ function init() {
         // console.log(answers.contribute)
         // Make a const for the GitHub Username
         const username = await api.getUser(answers.github);
-        console.log(username);
+        // console.log(username);
         // Assign the answers to a data variable
         const data = answers;
-        console.log(data);
+        // console.log(data);
         //Set the markdown
         const markDown = generate.generateMarkdown(data);
-        console.log(markDown);
+        // console.log(markDown);
         // Write it all to file
         writeToFile("README.md", markDown);            
       } catch(err){
