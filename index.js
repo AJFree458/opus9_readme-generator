@@ -22,42 +22,29 @@ function writeToFile(fileName, data) {
     if (err) {
       return console.log(err);
     }
-    console.log("SUCCESS!");
+    console.log("Done!");
   })
 }
 
 function init() {
   inquirer
   .prompt(questions)
-  .then(async (answers) => {
-      try {
-        // console.log(answers.github)
-        // console.log(answers.title)
-        // console.log(answers.description)
-        // console.log(answers.license)
-        // console.log(answers.install)
-        // console.log(answers.test)
-        // console.log(answers.usage)
-        // console.log(answers.contribute)
-        // Make an axios call
-        await axios.get(`https://api.github.com/users/${answers.github}`)
-        .then(response => {
-          // console.log(response);
-          // return (response);
-          // Assign the answers and axios response to a data variable
-          const data = Object.assign({}, answers, response);
-          // console.log(data);
-          //Set the markdown
-          const markDown = generate.generateMarkdown(data);
-          // console.log(markDown);
-          // Write it all to file
-          writeToFile("README.md", markDown);
-          return (data);
-        });     
-      } catch(err){
-        console.log(err);
-      }
-      });
+  .then(async answers => {
+    // Make an axios call
+    await axios.get(`https://api.github.com/users/${answers.github}`)
+    .then(response => {
+      // console.log(response);
+      // Assign the answers and axios response to a data variable
+      const data = Object.assign({}, answers, response);
+      // console.log(data);
+      //Set the markdown
+      const markDown = generate.generateMarkdown(data);
+      // console.log(markDown);
+      // Write it all to file
+      writeToFile("README.md", markDown);
+      return (data);
+    });
+  });
 }
 
 init();
