@@ -2,7 +2,7 @@ function generateMarkdown(data) {
   return `
 # ${data.title}
 
-![GitHub All Releases](https://img.shields.io/github/downloads/${data.github}/${data.title}/total)
+![GitHub All Releases](https://img.shields.io/github/languages/top/${data.github}/${data.title})
 
 ## Description
 
