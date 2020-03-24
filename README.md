@@ -1,7 +1,7 @@
 
 # opus9_readme-generator
 
-![GitHub All Releases](https://img.shields.io/github/downloads/AJFree458/opus9_readme-generator/total)
+![GitHub All Releases](https://img.shields.io/github/languages/top/AJFree458/opus9_readme-generator)
 
 ## Description
 
@@ -37,7 +37,7 @@ This project's repository is at: [opus9_readme-generator](https://github.com/AJF
 
 ## Usage
 
-First, cd to the directory that the application is in. Install dependencies, if needed, then run with:\n\n```\n\nnode index.js\n\n```\n\nAfter you have run the command, follow the instructions on the command-line.
+First, cd to the directory that the application is in. Install dependencies, if needed, then run with:
 
 ## License
 
@@ -51,7 +51,7 @@ Please report issues and concerns. Fork the repo if desired, and do requests.
 
 ## Credit
 
-undefined
+Main Contributor: Arthur Freeman
 
 ## Tests
 
@@ -65,4 +65,4 @@ To run tests, run the following command:
 
 <img src="https://avatars3.githubusercontent.com/u/59231957?v=4" alt="avatar" style="border-radius: 16px" width="30" />
 
-If you have any questions about the repo, open an issue or contact [AJFree458](https://api.github.com/users/AJFree458) directly at null.
+If you have any questions about the repo, open an issue or contact [AJFree458](https://api.github.com/users/AJFree458) directly at rthr.frmn@gmail.com.
