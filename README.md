@@ -37,7 +37,15 @@ This project's repository is at: [opus9_readme-generator](https://github.com/AJF
 
 ## Usage
 
+![README CLI](gif/Node_Video.gif)
+
 First, cd to the directory that the application is in. Install dependencies, if needed, then run with:
+
+```
+node index.js
+```
+
+After you have run the command, follow the instructions on the command-line.
 
 ## License
 
