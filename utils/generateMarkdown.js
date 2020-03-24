@@ -66,7 +66,7 @@ ${data.test}
 
 <img src="${data.data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
 
-If you have any questions about the repo, open an issue or contact [${data.github}](https://api.github.com/users/${data.github}) directly at ${data.data.email}.
+If you have any questions about the repo, open an issue or contact [${data.github}](https://api.github.com/users/${data.github}) directly at ${data.email}.
 `;
 };
 
